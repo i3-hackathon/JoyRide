@@ -34,21 +34,26 @@ responses = [
               "PostingService": ["Twitter"]
             }
           ]
-},
+}
+]
+        """,
+
+    """
+        [
 {
 "EventID": 3,
-"Timestamp": 500,
+"Timestamp": 100,
 "PostData": [
             {
-              "PostText": "Isn't Coit Tower beautiful?",
-              "PictureLoc": "http://christopherfountain.files.wordpress.com/2011/04/coit-tower.jpg",
-              "GPS": [37.8025, -122.4058],
+              "PostText": "Starting on my road trip to Big Sur. Can't wait!! #BMWJoyRide",
+              "PictureLoc": "https://scontent-a.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10888643_10152913233001558_2877980824822183944_n.jpg?oh=a3922d039b5be996ec56cdd05f14053d&oe=553AE0D4",
+              "GPS": [37.8197, -122.4786],
               "PostingService": ["Twitter"]
             },
             {
-              "PostText": "Check out this photo!",
-              "PictureLoc": "http://christopherfountain.files.wordpress.com/2011/04/coit-tower.jpg",
-              "GPS": [37.8025, -122.4058],
+              "PostText": "Starting on my road trip. Can't wait! #BMWJoyRide",
+              "PictureLoc": "https://scontent-a.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10888643_10152913233001558_2877980824822183944_n.jpg?oh=a3922d039b5be996ec56cdd05f14053d&oe=553AE0D4",
+              "GPS": [37.8197, -122.4786],
               "PostingService": ["Twitter"]
             }
           ]
@@ -63,33 +68,9 @@ responses = [
 "Timestamp": 100,
 "PostData": [
             {
-              "PostText": "2I just drove over the Golden Gate!",
-              "PictureLoc": "http://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg",
+              "PostText": "Beautiful, warm, sunny view at Point Lobos State Reserve on my way to Big Sur. #BMWJoyRide",
+              "PictureLoc": "https://scontent-a.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10888643_10152913233001558_2877980824822183944_n.jpg?oh=a3922d039b5be996ec56cdd05f14053d&oe=553AE0D4",
               "GPS": [37.8197, -122.4786],
-              "PostingService": ["Twitter"]
-            },
-            {
-              "PostText": "2The Golden Gate Bridge is beautiful!",
-              "PictureLoc": "http://www.howardmodels.com/fun-stuff/golden-gate-bridge/Golden-Gate-Bridge-Sunset.jpg",
-              "GPS": [37.8197, -122.4786],
-              "PostingService": ["Twitter"]
-            }
-          ]
-},
-{
-"EventID": 3,
-"Timestamp": 500,
-"PostData": [
-            {
-              "PostText": "2Isn't Coit Tower beautiful?",
-              "PictureLoc": "http://christopherfountain.files.wordpress.com/2011/04/coit-tower.jpg",
-              "GPS": [37.8025, -122.4058],
-              "PostingService": ["Twitter"]
-            },
-            {
-              "PostText": "2Check out this photo!",
-              "PictureLoc": "http://christopherfountain.files.wordpress.com/2011/04/coit-tower.jpg",
-              "GPS": [37.8025, -122.4058],
               "PostingService": ["Twitter"]
             }
           ]
@@ -104,39 +85,32 @@ responses = [
 "Timestamp": 100,
 "PostData": [
             {
-              "PostText": "3I just drove over the Golden Gate!",
-              "PictureLoc": "http://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg",
+              "PostText": "Spending my first night at Big Sur Campground & Cabins. #BMWJoyRide",
+              "PictureLoc": "https://scontent-a.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10888643_10152913233001558_2877980824822183944_n.jpg?oh=a3922d039b5be996ec56cdd05f14053d&oe=553AE0D4",
               "GPS": [37.8197, -122.4786],
-              "PostingService": ["Twitter"]
-            },
-            {
-              "PostText": "3The Golden Gate Bridge is beautiful!",
-              "PictureLoc": "http://www.howardmodels.com/fun-stuff/golden-gate-bridge/Golden-Gate-Bridge-Sunset.jpg",
-              "GPS": [37.8197, -122.4786],
-              "PostingService": ["Twitter"]
-            }
-          ]
-},
-{
-"EventID": 3,
-"Timestamp": 500,
-"PostData": [
-            {
-              "PostText": "3Isn't Coit Tower beautiful?",
-              "PictureLoc": "http://christopherfountain.files.wordpress.com/2011/04/coit-tower.jpg",
-              "GPS": [37.8025, -122.4058],
-              "PostingService": ["Twitter"]
-            },
-            {
-              "PostText": "3Check out this photo!",
-              "PictureLoc": "http://christopherfountain.files.wordpress.com/2011/04/coit-tower.jpg",
-              "GPS": [37.8025, -122.4058],
               "PostingService": ["Twitter"]
             }
           ]
 }
 ]
-        """
+        """,
+
+    """
+        [
+{
+"EventID": 3,
+"Timestamp": 100,
+"PostData": [
+            {
+              "PostText": "Take a look at this photo! #BMWJoyRide",
+              "PictureLoc": "https://scontent-a.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10888643_10152913233001558_2877980824822183944_n.jpg?oh=a3922d039b5be996ec56cdd05f14053d&oe=553AE0D4",
+              "GPS": [37.8197, -122.4786],
+              "PostingService": ["Twitter"]
+            }
+          ]
+}
+]
+        """,
 ]
 
 class Handler(BaseHTTPRequestHandler):
