@@ -22,7 +22,12 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_POST(self):
-        if self.path != '/joyride/event':
+        if self.path == '/joyride/tweets':
+            self.respond(200)
+            return
+
+
+        elif self.path != '/joyride/event':
             self.respond(404)
             return
         try:
