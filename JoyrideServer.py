@@ -114,11 +114,11 @@ class Handler(BaseHTTPRequestHandler):
             if index < len(responses):
                 message = responses[index]
                 index += 1
+                self.wfile.write(message)
 
-        if self.path == '/joyride/reset':
+        elif self.path == '/joyride/reset':
             index = 0
 
-        self.wfile.write(message)
         return
 
     def do_POST(self):
