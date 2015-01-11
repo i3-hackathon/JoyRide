@@ -90,8 +90,6 @@ class Handler(BaseHTTPRequestHandler):
                 self.all_candidate_posts = [] # Clear memory
                 return
 
-            # send some response back
-            self.respond(200)
 
             # PreBroca returns a BrocaSendMessageFormat object
             logging.info('About to enter PreBroca.')
@@ -111,6 +109,9 @@ class Handler(BaseHTTPRequestHandler):
             logging.info('Saving %i candidate posts to global memory',
                          len(candidate_posts['PostData']))
             self.all_candidate_posts.append(candidate_posts)
+
+            # send some response back
+            self.respond(200)
 
         except Exception, e:
             print "Exception while receiving message: " + traceback.format_exc()
