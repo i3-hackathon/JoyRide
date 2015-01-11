@@ -22,8 +22,7 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
-        self.send_response(200, "test")
-        return
+        self.respond(200)
 
         if self.path == '/joyride/tweets':
             message = """
@@ -66,10 +65,11 @@ class Handler(BaseHTTPRequestHandler):
 }
 ]
             """
-            self.respond(200, message)
+
+            self.wfile.write(message)
             return
         else:
-            self.respond(200, "not ready")
+            return
 
     def do_POST(self):
         if self.path != '/joyride/event':
