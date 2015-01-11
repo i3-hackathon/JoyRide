@@ -16,11 +16,11 @@ def addHistory(data):
     means that in addition to the usual fields, it has the 'POI', 'HAMWeather', and
     'WeatherUnderground' fields. '''
     global histories
-    history = histories.get(getId(data))
+    history = histories[getId(data)]
     data['History'] = history
 
 def store(data):
     '''data is a validated JSON-parsed dictionary.'''
     global histories
-    history = histories.get(getId(data))
+    history = histories[getId(data)]
     history.append(data)
