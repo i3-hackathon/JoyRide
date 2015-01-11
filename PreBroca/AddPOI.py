@@ -7,7 +7,7 @@ List of:
     'title': str,
     'id': str,
     'distance': int,
-    categories: list[str],
+    'categories': list[str],
     'ratings average': float,
     'ratings count': int,
 }
@@ -20,6 +20,10 @@ default_POI = {
     'categories': ['hotel'],
     'ratings average': 0,
     'ratings count': None,
+}
+
+POIs_by_location = {
+    # 37, -122:
 }
 
 def add(data):

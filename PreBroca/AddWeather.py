@@ -29,7 +29,7 @@ def AddHAMWeather(data):
     response = request.read()
     resp = json.loads(response)
     if resp['success']:
-       data[''] = resp['response']['ob']
+       data['Weather'] = resp['response']['ob']
        #print ob
        #print "The current weather in Seattle is %s with a temperature of %d" % (ob['weather'].lower(), ob['tempF'])
     request.close()
