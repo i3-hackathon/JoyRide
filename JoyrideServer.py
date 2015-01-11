@@ -22,6 +22,9 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
+        self.send_response(200, "test")
+        return
+
         if self.path == '/joyride/tweets':
             message = """
             [
