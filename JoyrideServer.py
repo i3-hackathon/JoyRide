@@ -65,7 +65,8 @@ class Handler(BaseHTTPRequestHandler):
             """
             self.respond(200, message)
             return
-
+        else:
+            self.respond(200, "not ready")
 
     def do_POST(self):
         if self.path != '/joyride/event':
