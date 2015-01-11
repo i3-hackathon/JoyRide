@@ -17,7 +17,7 @@ default_POI = {
     'title': 'Big Sur Campground & Cabins',
     'id': '8409q3qk-3c8d8c885b824cb192651cd286f3a2b4',
     'distance': 1,
-    categories: ['hotel'],
+    'categories': ['hotel'],
     'ratings average': 0,
     'ratings count': None,
 }
