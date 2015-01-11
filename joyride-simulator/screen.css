@@ -1,0 +1,21 @@
+
+BODY { padding: 3.25em 0 0.5em 0; }
+
+#controls { font-weight: bold; position: fixed; top: 0; left: 0; width: 100%; padding: 1em; background-color: #000000; color: #FFFFFF; z-index: 10; }
+#controls SPAN { margin-left: 3em; }
+
+.block { font-size: 1em; padding: 0.5em; margin: 0.5em 0.5em 0 0.5em; background-color: #EEEEEE; }
+.block H1 { margin-bottom: 0.5em; }
+.block IMG { width: 100%; margin-top: 0.5em; }
+
+.event { font-size: 0.9em; padding: 0.5em; margin: 0.5em 0 0 0; background-color: #DDDDDD; }
+.event-active { font-weight: bold; }
+.event-past { color: #999999; }
+
+.map { width: 100%; height: 20em; margin-top: 0.5em; }
+
+.left { width: 30%; float: left; }
+.right { width: 70%; float: right; }
+.right .event { margin-left: 0.5em; }
+
+.clearfix:after { content: ""; display: table; clear: both; }
