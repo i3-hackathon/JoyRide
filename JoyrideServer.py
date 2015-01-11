@@ -95,6 +95,47 @@ responses = [
           ]
 }
 ]
+        """,
+
+    """
+        [
+{
+"EventID": 3,
+"Timestamp": 100,
+"PostData": [
+            {
+              "PostText": "3I just drove over the Golden Gate!",
+              "PictureLoc": "http://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg",
+              "GPS": [37.8197, -122.4786],
+              "PostingService": ["Twitter"]
+            },
+            {
+              "PostText": "3The Golden Gate Bridge is beautiful!",
+              "PictureLoc": "http://www.howardmodels.com/fun-stuff/golden-gate-bridge/Golden-Gate-Bridge-Sunset.jpg",
+              "GPS": [37.8197, -122.4786],
+              "PostingService": ["Twitter"]
+            }
+          ]
+},
+{
+"EventID": 3,
+"Timestamp": 500,
+"PostData": [
+            {
+              "PostText": "3Isn't Coit Tower beautiful?",
+              "PictureLoc": "http://christopherfountain.files.wordpress.com/2011/04/coit-tower.jpg",
+              "GPS": [37.8025, -122.4058],
+              "PostingService": ["Twitter"]
+            },
+            {
+              "PostText": "3Check out this photo!",
+              "PictureLoc": "http://christopherfountain.files.wordpress.com/2011/04/coit-tower.jpg",
+              "GPS": [37.8025, -122.4058],
+              "PostingService": ["Twitter"]
+            }
+          ]
+}
+]
         """
 ]
 
