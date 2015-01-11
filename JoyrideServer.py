@@ -22,14 +22,8 @@ responses = [
 "Timestamp": 100,
 "PostData": [
             {
-              "PostText": "I just drove over the Golden Gate!",
-              "PictureLoc": "http://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg",
-              "GPS": [37.8197, -122.4786],
-              "PostingService": ["Twitter"]
-            },
-            {
-              "PostText": "The Golden Gate Bridge is beautiful!",
-              "PictureLoc": "http://www.howardmodels.com/fun-stuff/golden-gate-bridge/Golden-Gate-Bridge-Sunset.jpg",
+              "PostText": "Excited to go driving!",
+              "PictureLoc": "",
               "GPS": [37.8197, -122.4786],
               "PostingService": ["Twitter"]
             }
