@@ -21,7 +21,7 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header('Access-Control-Allow-Origin', '*')
         self.end_headers()
 
-    def do_POST(self):
+    def do_GET(self):
         if self.path == '/joyride/tweets':
             message = """
             [
@@ -67,7 +67,8 @@ class Handler(BaseHTTPRequestHandler):
             return
 
 
-        elif self.path != '/joyride/event':
+    def do_POST(self):
+        if self.path != '/joyride/event':
             self.respond(404)
             return
         try:
