@@ -4,7 +4,7 @@ from collections import defaultdict
 tweetsGenerated = defaultdict(lambda: [])
 
 def getId(data):
-    return data['TripID'] + " " + data['UserID']
+    return "{} {}".format(data['TripID'], data['UserID'])
 
 def new_trip(data):
     '''no tweets about the trip yet'''
