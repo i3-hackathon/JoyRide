@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
 EventIDDescription = {
-    1 : "Car on/off",
+    1 : "Car on",
+    11 : "Car off",
     2 : "Car MPH is 0",
     3 : "Picture taken",
     4 : "Car is slow",
@@ -33,6 +34,13 @@ BasicEventMessageContent = {
     'Timestamp': int,
 }
 
+RequestCandidateTweetsMessageContent = {
+    'EventID': int,
+    'TripID': int,  # -1 means that there is no trip
+    'UserID': unicode,
+    'Timestamp': int,
+}
+
 '''
 UserConfirmationMessageContent = {
     'EventID': int,
@@ -45,6 +53,7 @@ UserConfirmationMessageContent = {
 # Used by ValidateData.validate
 EventMessageFormat = {
     1 : BasicEventMessageContent,
+    11 : BasicEventMessageContent,
     2 : BasicEventMessageContent,
     3 : dict(BasicEventMessageContent, PictureLoc = str),
     4 : BasicEventMessageContent,
@@ -54,4 +63,5 @@ EventMessageFormat = {
     #8 : UserConfirmationMessageContent,
     #9 : UserConfirmationMessageContent,
     #10 : UserConfirmationMessageContent,
+    12 : RequestCandidateTweetsMessageContent,
 }

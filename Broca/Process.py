@@ -9,7 +9,6 @@ def process(data):
     
     candidate_posts = [MakeSinglePostFormat('yay', data)]
     
-    
     return candidate_posts
 
 def MakeSinglePostFormat(text, data):

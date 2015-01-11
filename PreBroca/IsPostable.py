@@ -7,13 +7,13 @@ PostableReasons = {
 def EventIsPostable(data):
     ''' Returns true if we should generate candidate tweets. If so, include the
     triggering reason by mutating 'data'. '''
+    return True
     if 'PictureLoc' in data: # Picture taken
         data['TriggerCondition'] = 1
         return True
-    elif data['EventID'] == 
     elif data['EventID'] == 11: # Car off
         pass
-    elif data['EventID'] == 2: # Car MPH is very low
+    elif data['EventID'] == 2: # Car MPH is super low
         pass
     
     

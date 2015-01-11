@@ -7,8 +7,7 @@ import logging
 
 import AddPOI
 import AddWeather
-import StoreToTripHistory
-import AddTripHistory
+import Memory
 import Broca.Process as Broca
 import IsPostable
 
@@ -25,17 +24,18 @@ def QueryForTripEnd():
         }
 
 def process(data):
-    '''data is a validated JSON-parsed dictionary.
+    '''data is a validated JSON-parsed dictionary in the form of BasicEventMessageContent.
     Returns the correctly formatted response message as a BrocaSendMessageFormat.'''
     
     if data['TripID'] == -1:
         if TripMightBeStarting(data) is True:
             logging.info('Trip might be starting')
             return QueryForTripStart()
-        
+    
     AddPOI.add(data)
     AddWeather.add(data)
-    AddTripHistory.add(data)
+    Memory.store(data)
+    Memory.addHistory(data)
     
     if TripMightBeEnding(data):
         return QueryForTripEnd()
