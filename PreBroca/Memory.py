@@ -15,10 +15,12 @@ def addHistory(data):
     'history' is a list of extended BasicEventMessageContent items. Extended here
     means that in addition to the usual fields, it has the 'POI', 'HAMWeather', and
     'WeatherUnderground' fields. '''
+    global histories
     history = histories.get(getId(data))
     data['History'] = history
 
 def store(data):
     '''data is a validated JSON-parsed dictionary.'''
+    global histories
     history = histories.get(getId(data))
     history.append(data)

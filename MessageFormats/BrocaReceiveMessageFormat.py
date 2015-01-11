@@ -20,17 +20,23 @@ def IsCoordinates(data_to_validate):
            type(data_to_validate[0]) is float and \
            type(data_to_validate[1]) is float
 
+def IsFloatOrInt(data_to_validate):
+    return type(data_to_validate) is float or type(data_to_validate) is int
+
+def IsCoordinatesOrNone(data_to_validate):
+    return data_to_validate is None or IsCoordinates(data_to_validate)
+
 # Values are either the type or a function that returns true if the type if correct.
 BasicEventMessageContent = {
     'EventID': int,
     'TripID': int,  # -1 means that there is no trip
     'UserID': unicode,
-    'CarMPH': float,
+    'CarMPH': IsFloatOrInt,
     'CarGPS': IsCoordinates,
     'PhoneGPS': IsCoordinates,
-    'CarWeather': float,
-    'Temperature': float,
-    'CarDestination': IsCoordinates,
+    'CarWeather': IsFloatOrInt,
+    'Temperature': IsFloatOrInt,
+    'CarDestination': IsCoordinatesOrNone,
     'Timestamp': int,
 }
 
