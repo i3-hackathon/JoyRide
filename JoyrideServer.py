@@ -108,9 +108,10 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         global index
+
         self.respond(200)
         if self.path == '/joyride/tweets':
-            if selfindex < len(responses):
+            if index < len(responses):
                 message = responses[index]
                 index += 1
 
