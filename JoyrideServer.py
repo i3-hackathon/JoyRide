@@ -16,6 +16,91 @@ from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 class Handler(BaseHTTPRequestHandler):
     all_candidate_posts = []
 
+    index = 0
+    responses = [
+        """
+            [
+    {
+    "EventID": 3,
+    "Timestamp": 100,
+    "PostData": [
+                {
+                  "PostText": "I just drove over the Golden Gate!",
+                  "PictureLoc": "http://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg",
+                  "GPS": [37.8197, -122.4786],
+                  "PostingService": ["Twitter"]
+                },
+                {
+                  "PostText": "The Golden Gate Bridge is beautiful!",
+                  "PictureLoc": "http://www.howardmodels.com/fun-stuff/golden-gate-bridge/Golden-Gate-Bridge-Sunset.jpg",
+                  "GPS": [37.8197, -122.4786],
+                  "PostingService": ["Twitter"]
+                }
+              ]
+    },
+    {
+    "EventID": 3,
+    "Timestamp": 500,
+    "PostData": [
+                {
+                  "PostText": "Isn't Coit Tower beautiful?",
+                  "PictureLoc": "http://christopherfountain.files.wordpress.com/2011/04/coit-tower.jpg",
+                  "GPS": [37.8025, -122.4058],
+                  "PostingService": ["Twitter"]
+                },
+                {
+                  "PostText": "Check out this photo!",
+                  "PictureLoc": "http://christopherfountain.files.wordpress.com/2011/04/coit-tower.jpg",
+                  "GPS": [37.8025, -122.4058],
+                  "PostingService": ["Twitter"]
+                }
+              ]
+    }
+    ]
+            """,
+
+        """
+            [
+    {
+    "EventID": 3,
+    "Timestamp": 100,
+    "PostData": [
+                {
+                  "PostText": "2I just drove over the Golden Gate!",
+                  "PictureLoc": "http://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg",
+                  "GPS": [37.8197, -122.4786],
+                  "PostingService": ["Twitter"]
+                },
+                {
+                  "PostText": "2The Golden Gate Bridge is beautiful!",
+                  "PictureLoc": "http://www.howardmodels.com/fun-stuff/golden-gate-bridge/Golden-Gate-Bridge-Sunset.jpg",
+                  "GPS": [37.8197, -122.4786],
+                  "PostingService": ["Twitter"]
+                }
+              ]
+    },
+    {
+    "EventID": 3,
+    "Timestamp": 500,
+    "PostData": [
+                {
+                  "PostText": "2Isn't Coit Tower beautiful?",
+                  "PictureLoc": "http://christopherfountain.files.wordpress.com/2011/04/coit-tower.jpg",
+                  "GPS": [37.8025, -122.4058],
+                  "PostingService": ["Twitter"]
+                },
+                {
+                  "PostText": "2Check out this photo!",
+                  "PictureLoc": "http://christopherfountain.files.wordpress.com/2011/04/coit-tower.jpg",
+                  "GPS": [37.8025, -122.4058],
+                  "PostingService": ["Twitter"]
+                }
+              ]
+    }
+    ]
+            """
+    ]
+
     def respond(self, code):
         self.send_response(code)
         self.send_header('Access-Control-Allow-Origin', '*')
@@ -23,46 +108,13 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         self.respond(200)
-        message = """
-        [
-{
-"EventID": 3,
-"Timestamp": 100,
-"PostData": [
-            {
-              "PostText": "I just drove over the Golden Gate!",
-              "PictureLoc": "http://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg",
-              "GPS": [37.8197, -122.4786],
-              "PostingService": ["Twitter"]
-            },
-            {
-              "PostText": "The Golden Gate Bridge is beautiful!",
-              "PictureLoc": "http://www.howardmodels.com/fun-stuff/golden-gate-bridge/Golden-Gate-Bridge-Sunset.jpg",
-              "GPS": [37.8197, -122.4786],
-              "PostingService": ["Twitter"]
-            }
-          ]
-},
-{
-"EventID": 3,
-"Timestamp": 500,
-"PostData": [
-            {
-              "PostText": "Isn't Coit Tower beautiful?",
-              "PictureLoc": "http://christopherfountain.files.wordpress.com/2011/04/coit-tower.jpg",
-              "GPS": [37.8025, -122.4058],
-              "PostingService": ["Twitter"]
-            },
-            {
-              "PostText": "Check out this photo!",
-              "PictureLoc": "http://christopherfountain.files.wordpress.com/2011/04/coit-tower.jpg",
-              "GPS": [37.8025, -122.4058],
-              "PostingService": ["Twitter"]
-            }
-          ]
-}
-]
-        """
+        if self.path == '/joyride/tweets':
+            if self.index < len(self.responses):
+                message = self.responses[self.index]
+                self.index += 1
+
+        if self.path == '/joyride/reset':
+            self.index = 0
 
         self.wfile.write(message)
         return
