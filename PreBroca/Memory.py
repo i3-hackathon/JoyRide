@@ -6,7 +6,7 @@ from collections import defaultdict
 histories = defaultdict(lambda: [])
 
 def getId(data):
-    return "{} {}".format(data['TripID'], data['UserID'])
+    return str(data['TripID']) + ' ' + str(data['UserID'])
 
 def addHistory(data):
     '''data is a validated JSON-parsed dictionary. Data is mutable, so we add the field
