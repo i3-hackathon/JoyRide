@@ -69,7 +69,7 @@ responses = [
 "PostData": [
             {
               "PostText": "Beautiful, warm, sunny view at Point Lobos State Reserve on my way to Big Sur. #BMWJoyRide",
-              "PictureLoc": "https://scontent-a.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10888643_10152913233001558_2877980824822183944_n.jpg?oh=a3922d039b5be996ec56cdd05f14053d&oe=553AE0D4",
+              "PictureLoc": "https://scontent-a.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/10433831_10152913234081558_68780241031993015_n.jpg?oh=bda12765f27c4ef63974cc83b5813409&oe=5536D6B6",
               "GPS": [37.8197, -122.4786],
               "PostingService": ["Twitter"]
             }
@@ -86,7 +86,7 @@ responses = [
 "PostData": [
             {
               "PostText": "Spending my first night at Big Sur Campground & Cabins. #BMWJoyRide",
-              "PictureLoc": "https://scontent-a.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10888643_10152913233001558_2877980824822183944_n.jpg?oh=a3922d039b5be996ec56cdd05f14053d&oe=553AE0D4",
+              "PictureLoc": "https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/10427676_10152913233196558_8295848653392814332_n.jpg?oh=91cb280aa6109796ccd40f60c8f54f20&oe=552D41D3&__gda__=1429856453_fb75c7a14398a0b630472771f916c8b1",
               "GPS": [37.8197, -122.4786],
               "PostingService": ["Twitter"]
             }
@@ -103,7 +103,7 @@ responses = [
 "PostData": [
             {
               "PostText": "Take a look at this photo! #BMWJoyRide",
-              "PictureLoc": "https://scontent-a.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10888643_10152913233001558_2877980824822183944_n.jpg?oh=a3922d039b5be996ec56cdd05f14053d&oe=553AE0D4",
+              "PictureLoc": "https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/p417x417/1512168_10152913233581558_6310571743314519856_o.jpg",
               "GPS": [37.8197, -122.4786],
               "PostingService": ["Twitter"]
             }
