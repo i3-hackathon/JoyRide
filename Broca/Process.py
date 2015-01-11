@@ -23,6 +23,12 @@ def get_recent_destination(data):
             return datum['CarDestination']
     return None
 
+def get_recent_photo(data):
+    for datum in reversed(data['History']):
+        if datum['EventID'] == 3:  # picture taken
+            return datum['PictureLoc']
+    return None
+
 def tweet_with_photo_exists(data):
     for old_tweet_list in tweetsGenerated[getId(data)]:
         for old_tweet in old_tweet_list:
@@ -42,7 +48,18 @@ def process(data):
 
     if new_trip(data) and trip_a_bit_old(data):
         # Make a start of trip tweet
-        candidate_posts.append(MakeSinglePostFormat('Starting my road trip!', data))
+        if 'PictureLoc' not in data or not data['PictureLoc']:
+            recent_photo = get_recent_photo(data)
+            if recent_photo:
+                data['PictureLoc'] = recent_photo
+
+        destination = get_recent_destination(data)
+
+        if destination:
+            candidate_posts.append(MakeSinglePostFormat('Starting my road trip to {}!'.format(destination), data))
+            candidate_posts.append(MakeSinglePostFormat('Starting my road trip to {} for some hiking! Can\'t wait!'.format(destination), data))
+        else:
+            candidate_posts.append(MakeSinglePostFormat('Starting my road trip!', data))
 
     if 'POI' in data and 'PictureLoc' in data:
         candidate_posts.append(MakeSinglePostFormat('Check out my photo at {}!'.format(data['POI']), data))
@@ -50,7 +67,7 @@ def process(data):
     if 'POI' in data:
         candidate_posts.append(MakeSinglePostFormat('Looking forward to a lovely evening at {}'.format(data['POI']), data))
 
-    if 'PictureLoc' in data:
+    if 'PictureLoc' in data and not tweet_with_photo_exists(data):
         candidate_posts.append(MakeSinglePostFormat('Check out my photo!', data))
 
     tweetsGenerated[getId(data)].append(candidate_posts)
