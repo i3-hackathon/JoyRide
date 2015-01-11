@@ -116,6 +116,7 @@ class Handler(BaseHTTPRequestHandler):
         except Exception, e:
             print "Exception while receiving message: " + traceback.format_exc()
             self.respond(500)
+            self.wfile.write("Data: " + str(data))
             self.wfile.write("Exception while receiving message: " + traceback.format_exc())
             return
 
