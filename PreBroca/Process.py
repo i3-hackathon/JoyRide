@@ -10,6 +10,7 @@ import AddWeather
 import StoreToTripHistory
 import AddTripHistory
 import Broca.Process as Broca
+import IsPostable
 
 def QueryForTripStart():
     return {
@@ -39,11 +40,13 @@ def process(data):
     if TripMightBeEnding(data):
         return QueryForTripEnd()
     
+    if not IsPostable.EventIsPostable(data):
+        return None
+    
     # Broca returns a list of candidate posts in SinglePostFormat.
     logging.info('About to enter Broca')
     candidate_posts = Broca.process(data)
     logging.info('Just left Broca')
-    
     return FormatReturnMessage(candidate_posts)
 
 def FormatReturnMessage(candidate_posts):
