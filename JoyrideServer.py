@@ -15,22 +15,6 @@ from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 
 index = 0
 responses = [
-    """
-        [
-{
-"EventID": 3,
-"Timestamp": 100,
-"PostData": [
-            {
-              "PostText": "Excited to go driving!",
-              "PictureLoc": "",
-              "GPS": [37.8197, -122.4786],
-              "PostingService": ["Twitter"]
-            }
-          ]
-}
-]
-        """,
 
     """
         [
